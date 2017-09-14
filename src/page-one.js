@@ -1,10 +1,10 @@
 import React from 'react';
 import './header.scss';
 
-const Header = () => (
+const PageOne = () => (
   <div className='blue'>
-    <h1>Header</h1>
+    <div>Page One</div>
   </div>
 );
 
-export default Header;
+export default PageOne;

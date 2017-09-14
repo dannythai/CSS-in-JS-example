@@ -10,8 +10,10 @@
     "prod": "node_modules/.bin/webpack --config webpack.config.js -p"
   },
   "dependencies": {
+    "bundle-loader": "^0.5.5",
     "react": "^16.0.0-rc.2",
-    "react-dom": "^16.0.0-rc.2"
+    "react-dom": "^16.0.0-rc.2",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
