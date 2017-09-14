@@ -1,5 +1,5 @@
 import React from 'react';
-import './header.scss';
+import './page-one.scss';
 
 const PageOne = () => (
   <div className='blue'>
