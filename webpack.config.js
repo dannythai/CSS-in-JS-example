@@ -26,7 +26,19 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ['style-loader', 'css-loader', 'sass-loader']
+        loader: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              data: "@import 'global.scss';",
+              includePaths: [
+                path.resolve(__dirname, "./src")
+              ]
+            }
+          }
+        ]
       }, {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         use: [
