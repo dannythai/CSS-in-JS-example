@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    'app': ['./src/app.js', './src/cm.scss']
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -29,15 +31,7 @@ module.exports = {
         loader: [
           'style-loader',
           'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              data: "@import 'global.scss';",
-              includePaths: [
-                path.resolve(__dirname, "./src")
-              ]
-            }
-          }
+          'sass-loader'
         ]
       }, {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
