@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './header';
-import './app.scss';
+import Feature from './feature';
 
 const App = () => {
   return (
     <div className='hello'>
       Hello World!
       <Header />
+      <Feature />
     </div>
   );
 };
