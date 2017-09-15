@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const output = {
-  filename: 'bundle.js',
+  filename: '[name].bundle.js',
   path: path.resolve(__dirname, 'dist')
 };
 
@@ -72,37 +72,12 @@ const generateSassLoader = site => {
   }
 }
 
-module.exports = [
-  {
-    entry: {
-      'app': ['./src/app.js']
-    },
-    output: output,
-    resolve: resolve,
-    module: {
-      rules: [
-        babelLoader,
-        generateSassLoader('jdate'),
-        fileLoader
-      ]
-    },
-    devServer: devServer,
-    plugins: plugins
-  },
-  {
-    entry: {
-      'cm': ['./src/app.js']
-    },
-    output: output,
-    resolve: resolve,
-    module: {
-      rules: [
-        babelLoader,
-        generateSassLoader('cm'),
-        fileLoader
-      ]
-    },
-    devServer: devServer,
-    plugins: plugins
-  }
-];
+module.exports = {
+  plugins: plugins,
+  fileLoader: fileLoader,
+  devServer: devServer,
+  generateSassLoader: generateSassLoader,
+  babelLoader: babelLoader,
+  output: output,
+  resolve: resolve
+}
