@@ -1,8 +1,9 @@
 import React from 'react';
+import './page-two.scss';
 
 const PageTwo = () => {
   return (
-    <div>
+    <div className='page-two'>
       This is page 2!
     </div>
   );

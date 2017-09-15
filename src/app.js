@@ -5,8 +5,8 @@ import Loading from './loading';
 
 // bundle-loader package wraps the component - setting it as a lazy loaded component
 import PageOne from 'bundle-loader?lazy!./page-one';
+import PageTwo from 'bundle-loader?lazy!./page-two';
 
-import PageTwo from './page-two';
 import Bundle from './bundle';
 import './app.scss';
 
@@ -48,7 +48,13 @@ const App = () => (
           )}
         </Bundle>
       )} />
-      <Route path='/page2' render={() => <PageTwo />} />
+      <Route path='/page2' render={() => (
+        <Bundle load={PageTwo}>
+          {(Comp) => (
+            Comp ? <Comp /> : <Loading />
+          )}
+        </Bundle>
+      )} />
     </div>
   </Router>
 );
